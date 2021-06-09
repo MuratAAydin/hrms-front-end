@@ -1,100 +1,159 @@
-import React, {Component} from 'react'
+import React from 'react'
 import "reactstrap";
+import {
+	 Button, Col,
+	 Collapse,
+	 Container, DropdownItem, DropdownMenu,
+	 DropdownToggle,
+	 Nav,
+	 Navbar,
+	 NavbarBrand,
+	 NavItem,
+	 Row, UncontrolledDropdown,
+	 UncontrolledTooltip
+} from "reactstrap";
 
-export default class MenuExampleBasic extends Component {
-	 render() {
-			return (
-					<nav className="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
-						 <div className="container">
-								<div className="navbar-translate">
-									 <a className="navbar-brand " href="#"
-											rel="tooltip" title="Human Resource Management System" data-placement="bottom">
-											<span className='btn-link btn-danger'>H</span>uman
-											<span className='btn-link btn-danger'> R</span>esource
-											<span className='btn-link btn-danger'> M</span>anagement
-											<span className='btn-link btn-danger'> S</span>ystem
-									 </a>
-									 <button className="navbar-toggler navbar-toggler" type="button" data-toggle="collapse"
-													 data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
-													 aria-label="Toggle navigation">
-											<span className="navbar-toggler-bar bar1"/>
-											<span className="navbar-toggler-bar bar2"/>
-											<span className="navbar-toggler-bar bar3"/>
-									 </button>
-								</div>
-								<div className="collapse navbar-collapse justify-content-end" id="navigation">
-									 <div className="navbar-collapse-header">
-											<div className="row">
-												 <div className="col-6 collapse-brand">
-														<a>HRMS</a>
-												 </div>
-												 <div className="col-6 collapse-close text-right">
-														<button type="button" className="navbar-toggler" data-toggle="collapse"
-																		data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
-																		aria-label="Toggle navigation">
-															 <i className="tim-icons icon-simple-remove"/>
-														</button>
-												 </div>
-											</div>
-									 </div>
-									 <ul className="navbar-nav">
-											<li className="nav-item p-0">
-												 <a className="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom"
-														href="https://twitter.com/" target="_blank">
-														<i className="fab fa-twitter"/>
-														<p className="d-lg-none d-xl-none">Twitter</p>
-												 </a>
-											</li>
-											<li className="nav-item p-0">
-												 <a className="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom"
-														href="https://www.facebook.com/" target="_blank">
-														<i className="fab fa-facebook-square"/>
-														<p className="d-lg-none d-xl-none">Facebook</p>
-												 </a>
-											</li>
-											<li className="nav-item p-0">
-												 <a className="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom"
-														href="https://www.instagram.com/" target="_blank">
-														<i className="fab fa-instagram"/>
-														<p className="d-lg-none d-xl-none">Instagram</p>
-												 </a>
-											</li>
-											<li className="dropdown nav-item">
-												 <a href="#" className="dropdown-toggle nav-link" data-toggle="dropdown">
-														<i className="fa fa-cogs d-lg-none d-xl-none"/> Getting started
-												 </a>
-												 <div className="dropdown-menu dropdown-with-icons">
-														<a href="https://demos.creative-tim.com/blk-design-system/docs/1.0/getting-started/overview.html"
-															 className="dropdown-item">
-															 <i className="tim-icons icon-paper"/> Documentation
-														</a>
-														<a href="#" className="dropdown-item">
-															 <i className="tim-icons icon-bullet-list-67"/>Register Page
-														</a>
-														<a href="#" className="dropdown-item">
-															 <i className="tim-icons icon-image-02"/>Landing Page
-														</a>
-														<a href="#" className="dropdown-item">
-															 <i className="tim-icons icon-single-02"/>Profile Page
-														</a>
-												 </div>
-											</li>
-											<li className="nav-item">
-												 <a className="nav-link btn btn-default d-none d-lg-block" href="javascript:void(0)"
-														onClick="scrollToDownload()">
-														<i className="tim-icons icon-cloud-download-93"/> Download
-												 </a>
-											</li>
-											<li className="nav-item">
-												 <a className="nav-link btn btn-default d-none d-lg-block" href="javascript:void(0)"
-														onClick="scrollToDownload()">
-														<i className="tim-icons icon-cloud-download-93"/> Download
-												 </a>
-											</li>
-									 </ul>
-								</div>
+export default function MenuExampleBasic() {
+	 const [collapseOpen, setCollapseOpen] = React.useState(false);
+	 const [collapseOut, setCollapseOut] = React.useState("");
+	 const [color, setColor] = React.useState("navbar-transparent");
+	 React.useEffect(() => {
+			window.addEventListener("scroll", changeColor);
+			return function cleanup() {
+				 window.removeEventListener("scroll", changeColor);
+			};
+	 }, []);
+	 const changeColor = () => {
+			if (
+					document.documentElement.scrollTop > 99 ||
+					document.body.scrollTop > 99
+			) {
+				 setColor("bg-info");
+			} else if (
+					document.documentElement.scrollTop < 100 ||
+					document.body.scrollTop < 100
+			) {
+				 setColor("navbar-transparent");
+			}
+	 };
+	 const toggleCollapse = () => {
+			document.documentElement.classList.toggle("nav-open");
+			setCollapseOpen(!collapseOpen);
+	 };
+	 const onCollapseExiting = () => {
+			setCollapseOut("collapsing-out");
+	 };
+	 const onCollapseExited = () => {
+			setCollapseOut("");
+	 };
+	 const scrollToDownload = () => {
+			document
+					.getElementById("download-section")
+					.scrollIntoView({behavior: "smooth"});
+	 };
+	 return (
+			 <Navbar className={"fixed-top text-white " + color} color-on-scroll="100" expand="lg">
+					<Container>
+						 <div className="navbar-translate">
+								<NavbarBrand to="/" id="navbar-brand" >
+									 <span className='btn-link btn-danger'>H</span>uman
+									 <span className='btn-link btn-danger'> R</span>esource
+									 <span className='btn-link btn-danger'> M</span>anagement
+									 <span className='btn-link btn-danger'> S</span>ystem
+								</NavbarBrand>
+								<UncontrolledTooltip placement="bottom" target="navbar-brand">
+									 Designed Creative Tim
+								</UncontrolledTooltip>
+								<button
+										aria-expanded={collapseOpen}
+										className="navbar-toggler navbar-toggler"
+										onClick={toggleCollapse}
+								>
+									 <span className="navbar-toggler-bar bar1" />
+									 <span className="navbar-toggler-bar bar2" />
+									 <span className="navbar-toggler-bar bar3" />
+								</button>
 						 </div>
-					</nav>
-			)
-	 }
+						 <Collapse
+								 className={"justify-content-end " + collapseOut }
+								 navbar
+								 isOpen={collapseOpen}
+								 onExiting={onCollapseExiting}
+								 onExited={onCollapseExited}
+						 >
+								<div className={"navbar-collapse-header "}>
+									 <Row>
+											<Col className="collapse-brand" xs="6">
+												 <a href="#pablo" className='text-success' onClick={(e) => e.preventDefault()}>
+														<span className='btn-link btn-danger'>H</span>uman
+														<span className='btn-link btn-danger'> R</span>esource
+														<span className='btn-link btn-danger'> M</span>anagement
+														<span className='btn-link btn-danger'> S</span>ystem
+												 </a>
+											</Col>
+											<Col className="collapse-close text-right" xs="6">
+												 <button
+														 aria-expanded={collapseOpen}
+														 className="navbar-toggler"
+														 onClick={toggleCollapse}
+												 >
+														<i className="tim-icons icon-simple-remove" />x
+												 </button>
+											</Col>
+									 </Row>
+								</div>
+								<Nav navbar>
+									 <UncontrolledDropdown nav>
+											<DropdownToggle
+													caret
+													color="default"
+													data-toggle="dropdown"
+													href="#pablo"
+													nav
+													onClick={(e) => e.preventDefault()}
+											>
+												 <i className="fa fa-cogs d-lg-none d-xl-none" />
+												 Language
+											</DropdownToggle>
+											<DropdownMenu className="dropdown-with-icons">
+												 <DropdownItem to="/register-page">
+														English
+												 </DropdownItem>
+												 <DropdownItem to="/landing-page">
+														Türkçe
+												 </DropdownItem>
+											</DropdownMenu>
+									 </UncontrolledDropdown>
+									 <NavItem>
+											<Button
+													className="nav-link pr-md-2"
+													color="primary"
+													target="_blank"
+													href="#"
+											>
+												 <i className="tim-icons icon-spaceship" /> Sign Up
+											</Button>
+											<Button
+													className="nav-link d-lg-none d-xl-none pr-3 ml-1"
+													color="default"
+													onClick={scrollToDownload}
+											>
+												 <i className="tim-icons icon-cloud-download-93" /> Sign In
+											</Button>
+									 </NavItem>
+									 <NavItem>
+											<Button
+													className="nav-link d-none d-lg-block"
+													color="default"
+													style={{paddingRight: '10px'}}
+													onClick={scrollToDownload}
+											>
+												 <i className="tim-icons icon-cloud-download-93" /> Sign In
+											</Button>
+									 </NavItem>
+								</Nav>
+						 </Collapse>
+					</Container>
+			 </Navbar>
+	 )
 }
