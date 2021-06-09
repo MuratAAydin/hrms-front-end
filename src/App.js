@@ -1,10 +1,13 @@
 import './App.css';
-import 'semantic-ui-css/semantic.min.css'
+import 'reactstrap'
+import Navi from "./layouts/Navi.jsx";
+import Dashboard from './layouts/Dashboard'
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <Navi/>
+      <Dashboard/>
     </div>
   );
 }
