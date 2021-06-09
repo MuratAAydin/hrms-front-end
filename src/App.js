@@ -4,7 +4,6 @@ import 'jquery'
 import Navi from "./layouts/Navi.jsx";
 import Footer from "./layouts/Footer.jsx";
 import Dashboard from './layouts/Dashboard'
-import Typography from "./layouts/Typography.jsx";
 import {Col, Container, Row} from "reactstrap";
 import React from "react";
 import PageHeader from "./layouts/PageHeader";
