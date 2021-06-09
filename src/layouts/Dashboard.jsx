@@ -32,7 +32,7 @@ import {
 	 NavLink,
 } from "reactstrap";
 
-export default function Tabs() {
+export default function Dashboard() {
 	 const [iconTabs, setIconsTabs] = React.useState(1);
 	 const [textTabs, setTextTabs] = React.useState(4);
 	 return (
