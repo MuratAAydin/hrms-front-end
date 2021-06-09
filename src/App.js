@@ -30,7 +30,6 @@ function App() {
 											/>
 											<Row>
 												 <Col md="3">
-														<Typography/>
 												 </Col>
 												 <Col md='9'>
 														<Dashboard/>
