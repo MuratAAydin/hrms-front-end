@@ -52,7 +52,7 @@ export default function MenuExampleBasic() {
 					.scrollIntoView({behavior: "smooth"});
 	 };
 	 return (
-			 <Navbar className={"fixed-top text-white " + color} color-on-scroll="100" expand="lg">
+			 <Navbar className={"fixed-top text-white " + color } color-on-scroll="100" expand="lg">
 					<Container>
 						 <div className="navbar-translate">
 								<NavbarBrand to="/" id="navbar-brand" >
@@ -126,7 +126,7 @@ export default function MenuExampleBasic() {
 									 </UncontrolledDropdown>
 									 <NavItem>
 											<Button
-													className="nav-link pr-md-2"
+													className="nav-link px-2 pr-3"
 													color="primary"
 													target="_blank"
 													href="#"

@@ -15640,7 +15640,14 @@ input.datetimepicker[data-color="yellow"] + .bootstrap-datetimepicker-widget but
   margin-bottom: 0;
   padding: 7px 0; }
 .card.card-coin {
-  border: 2px solid #344675; }
+  border-radius: 2rem;
+  background: #2a2c6c;
+}
+.bg-navbar{
+  border-radius: 2rem;
+  padding: 15px 3% 15px 3%;
+  border: 1px solid #1d8cf8;
+}
 .card.card-coin .card-header {
   margin: -100px auto 20px; }
 .card.card-coin img {
