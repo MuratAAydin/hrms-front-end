@@ -1,7 +1,7 @@
 import axios from "axios"
 
-export default class curriculumVitaeService {
+export default class CurriculumVitaeService {
 	 getCurriculumVitaes() {
-			return axios.get('http://localhost:8080/api/curriculumVitaes/getall')
+			return axios.get('http://localhost:8080/api/resumes/getall')
 	 }
 }

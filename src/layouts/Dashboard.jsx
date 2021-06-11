@@ -34,7 +34,6 @@ export default function DataListExample() {
 									 <Card>
 											<CardHeader>
 												 <Navbar className="navbar-transparent nav-tabs-info" expand="lg">
-
 														<Nav className="nav-tabs-info" role="tablist" tabs>
 															 <NavItem>
 																	<NavLink
