@@ -3,7 +3,7 @@ import 'reactstrap'
 import 'jquery'
 import Navi from "./layouts/Navi.jsx";
 import Footer from "./layouts/Footer.jsx";
-import DataListExample from './layouts/DataListExample'
+import Dashboard from './layouts/Dashboard'
 import {Container} from "reactstrap";
 import React from "react";
 import PageHeader from "./layouts/PageHeader";
@@ -28,7 +28,7 @@ function App() {
 													className="path path3"
 													src={require("./assets/img/path2.png").default}
 											/>
-											<DataListExample/>
+											<Dashboard/>
 
 									 </Container>
 								</div>
