@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Button, Card, CardBody, CardFooter, Col, ListGroup, ListGroupItem, Row, TabPane} from "reactstrap";
 import EmployeeService from "../services/employeeService";
+import {Link, Route} from "react-router-dom";
 
 export default function EmployeeCards() {
 	 const [employee, setEmployees] = useState([]);
@@ -11,7 +12,7 @@ export default function EmployeeCards() {
 	 }, [])
 	 return (
 			 <>
-					<TabPane tabId="link5">
+					<TabPane tabId="linkEmployee">
 						 <Row>
 								{employee.map((employee) =>
 										<Col md="4">
@@ -32,19 +33,26 @@ export default function EmployeeCards() {
 														 </Row>
 													</CardBody>
 													<CardFooter className="text-center">
-														 <Button className="btn-simple" color="primary">
-																view profile
-														 </Button>
+														 <Link to={`/details/${employee.id}`}>
+
+																<Button className="btn-simple" color="primary">
+																	 view profile
+																</Button>
+														 </Link>
 													</CardFooter>
 											 </Card>
 										</Col>
 								)}
 						 </Row>
-						 <div className='text-center'>
-								<Button className="btn-round" color="primary" type="button">
-									 view all employee
-								</Button>
-						 </div>
+						 <Route exact path='/'>
+								<div className='text-center'>
+									 <Link to={`/details/employees`}>
+											<Button className="btn-round" color="primary" type="button">
+												 view all employee
+											</Button>
+									 </Link>
+								</div>
+						 </Route>
 					</TabPane>
 			 </>
 	 )

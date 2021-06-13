@@ -17,18 +17,18 @@ import JobAdvertCards from "../pages/JobAdvertCards";
 import EmployeeCards from "../pages/EmployeeCards";
 
 export default function DataListExample() {
-	 const [textTabs, setTextTabs] = React.useState(4);
+	 const [textTabs, setTextTabs] = React.useState('JobAdverts');
 	 return (
 			 <div className="section section-tabs">
 					<Container>
 						 <div className="title">
-								<h3 className="mb-3">Job adverts</h3>
+								<h3 className="mb-3">{textTabs}</h3>
 						 </div>
 						 <Row>
 								<Col className="ml-auto mr-auto" md="12" xl="12">
 									 <div className="mb-3">
 											<small className="text-uppercase font-weight-bold">
-												 Example job adverts
+												 Example {textTabs}
 											</small>
 									 </div>
 									 <Card>
@@ -38,9 +38,9 @@ export default function DataListExample() {
 															 <NavItem>
 																	<NavLink
 																			className={classnames({
-																				 active: textTabs === 4,
+																				 active: textTabs === 'JobAdverts',
 																			})}
-																			onClick={(e) => setTextTabs(4)}
+																			onClick={(e) => setTextTabs('JobAdverts')}
 																			href="#"
 																	>
 																		 Job Adverts
@@ -49,9 +49,9 @@ export default function DataListExample() {
 															 <NavItem>
 																	<NavLink
 																			className={classnames({
-																				 active: textTabs === 5,
+																				 active: textTabs === 'Employee',
 																			})}
-																			onClick={(e) => setTextTabs(5)}
+																			onClick={(e) => setTextTabs('Employee')}
 																			href="#"
 																	>
 																		 Employees
@@ -68,7 +68,7 @@ export default function DataListExample() {
 												 </Navbar>
 											</CardHeader>
 											<CardBody>
-												 <TabContent className="tab-space" activeTab={"link" + textTabs}>
+												 <TabContent className="tab-space m" activeTab={"link" + textTabs}>
 														<JobAdvertCards/>
 														<EmployeeCards/>
 												 </TabContent>
