@@ -26,9 +26,9 @@ export default function JobAdvertCards() {
 														</Row>
 														<Row>
 															 <ListGroup>
-																	<ListGroupItem>{jobAdvert.maxSalary + ' - ' + jobAdvert.minSalary }</ListGroupItem>
-																	<ListGroupItem>{jobAdvert.openPositionNumber}</ListGroupItem>
-																	<ListGroupItem>{jobAdvert.closedDate}</ListGroupItem>
+																	<ListGroupItem>{`${jobAdvert.minSalary}$ - ${jobAdvert.maxSalary}$` }</ListGroupItem>
+																	<ListGroupItem>{`${jobAdvert.closedDate}`}</ListGroupItem>
+																	<span className='px-1'>{jobAdvert.description}</span>
 															 </ListGroup>
 														</Row>
 												 </CardBody>

@@ -1,22 +1,7 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import {Container} from "reactstrap";
+import MainTitle from "../pages/MainTitle";
+import {Route} from "react-router-dom";
 
 // core components
 
@@ -67,9 +52,7 @@ export default function PageHeader() {
 													id="square8"
 													style={{transform: squares7and8}}
 											/>
-											<div className="content-center brand">
-												 <h1 className="h1-seo " style={{fontWeight: 600, textTransform: 'capitalize', fontSize: '5rem'}}>HRMS</h1>
-											</div>
+											<Route path='/' component={MainTitle}/>
 											<div className="register-bg"/>
 											<div
 													className="square square-1"

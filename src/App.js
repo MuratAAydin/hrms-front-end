@@ -7,19 +7,22 @@ import Dashboard from './layouts/Dashboard'
 import {Container} from "reactstrap";
 import React from "react";
 import PageHeader from "./layouts/PageHeader";
+import {Route} from "react-router-dom";
 
 function App() {
 	 return (
 			 <>
 					<Navi/>
 					<div className="wrapper">
-						 <img
-								 alt="..."
-								 className="path path3"
-								 style={{width: '75rem', left: '0'}}
-								 src={require("./assets/img/path5.png").default}
-						 />
-						 <PageHeader/>
+						 <Route exact path='/'>
+								<img
+										alt="..."
+										className="path path3"
+										style={{width: '75rem', left: '0'}}
+										src={require("./assets/img/path5.png").default}
+								/>
+								<PageHeader/>
+						 </Route>
 						 <div className="main">
 								<div className='section section-typo'>
 									 <Container>
@@ -28,8 +31,7 @@ function App() {
 													className="path path3"
 													src={require("./assets/img/path2.png").default}
 											/>
-											<Dashboard/>
-
+											<Route path='/' component={Dashboard}/>
 									 </Container>
 								</div>
 								<Footer/>

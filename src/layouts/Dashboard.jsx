@@ -41,7 +41,7 @@ export default function DataListExample() {
 																				 active: textTabs === 4,
 																			})}
 																			onClick={(e) => setTextTabs(4)}
-																			href="#pablo"
+																			href="#"
 																	>
 																		 Job Adverts
 																	</NavLink>
@@ -52,7 +52,7 @@ export default function DataListExample() {
 																				 active: textTabs === 5,
 																			})}
 																			onClick={(e) => setTextTabs(5)}
-																			href="#pablo"
+																			href="#"
 																	>
 																		 Employees
 																	</NavLink>
@@ -60,7 +60,7 @@ export default function DataListExample() {
 														</Nav>
 														<Collapse navbar isOpen={false}>
 															 <div className="ml-auto">
-																	<NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+																	<NavLink href="#" onClick={(e) => e.preventDefault()}>
 																		 <Input defaultValue="" style={{width: 250}} placeholder="Search..." type="text"/>
 																	</NavLink>
 															 </div>
