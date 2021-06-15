@@ -20,7 +20,7 @@ export default function EmployeeCards() {
 													<CardBody>
 														 <Row>
 																<Col className="text-center" md="12">
-																	 <h4 className="text-uppercase">{employee.name + ' ' + employee.surname}</h4>
+																	 <h4 className="text-uppercase mt-2">{employee.name + ' ' + employee.surname}</h4>
 																	 <span>{employee.resume?.description}</span>
 																	 <hr className="line-success"/>
 																</Col>
@@ -29,6 +29,17 @@ export default function EmployeeCards() {
 																<ListGroup>
 																	 <ListGroupItem>{employee.name + ' ' + employee.surname}</ListGroupItem>
 																	 <ListGroupItem>{employee.tech?.title}</ListGroupItem>
+																	 <ListGroupItem>
+																			<Link className='btn-link btn-success'
+																						to={`${employee.curriculumVitaes?.github}`}>
+																				 Github
+																			</Link>
+																	 </ListGroupItem>
+																	 <ListGroupItem>
+																			<Link className='btn-link btn-info' to={`${employee.curriculumVitaes?.LinkedIn}`}>
+																				 LinkedIn
+																			</Link>
+																	 </ListGroupItem>
 																</ListGroup>
 														 </Row>
 													</CardBody>

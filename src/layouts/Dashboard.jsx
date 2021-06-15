@@ -12,8 +12,9 @@ import {
 	 CardBody,
 	 Nav,
 	 NavItem,
-	 NavLink, Input, Navbar, Collapse
+	 NavLink, Input, Navbar, Collapse, Button
 } from "reactstrap";
+import {Link} from "react-router-dom";
 
 export default function DataListExample() {
 	 const [textTabs, setTextTabs] = React.useState('JobAdverts');
@@ -34,34 +35,41 @@ export default function DataListExample() {
 											<CardHeader>
 												 <Navbar className="navbar-transparent nav-tabs-info" expand="lg">
 														<Nav className="nav-tabs-info" role="tablist" tabs>
-																	<NavItem>
-																		 <NavLink
-																				 className={classnames({
-																						active: textTabs === 'JobAdverts',
-																				 })}
-																				 onClick={(e) => setTextTabs('JobAdverts')}
-																				 href="#"
-																		 >
-																				Job Adverts
-																		 </NavLink>
-																	</NavItem>
-																	<NavItem>
-																		 <NavLink
-																				 className={classnames({
-																						active: textTabs === 'Employee',
-																				 })}
-																				 onClick={(e) => setTextTabs('Employee')}
-																				 href="#"
-																		 >
-																				Employees
-																		 </NavLink>
-																	</NavItem>
+															 <NavItem>
+																	<NavLink
+																			className={classnames({
+																				 active: textTabs === 'JobAdverts',
+																			})}
+																			onClick={(e) => setTextTabs('JobAdverts')}
+																			href="#"
+																	>
+																		 Job Adverts
+																	</NavLink>
+															 </NavItem>
+															 <NavItem>
+																	<NavLink
+																			className={classnames({
+																				 active: textTabs === 'Employee',
+																			})}
+																			onClick={(e) => setTextTabs('Employee')}
+																			href="#"
+																	>
+																		 Employees
+																	</NavLink>
+															 </NavItem>
 														</Nav>
 														<Collapse navbar isOpen={false}>
 															 <div className="ml-auto">
 																	<NavLink href="#" onClick={(e) => e.preventDefault()}>
 																		 <Input defaultValue="" style={{width: 250}} placeholder="Search..." type="text"/>
 																	</NavLink>
+															 </div>
+															 <div className="ml-outo">
+																	<Link to={'/addJobAdvert'}>
+																		 <Button className='btn' color="success">
+																				Add Job Advert
+																		 </Button>
+																	</Link>
 															 </div>
 														</Collapse>
 												 </Navbar>

@@ -8,20 +8,37 @@ import {Container} from "reactstrap";
 import React from "react";
 import PageHeader from "./layouts/PageHeader";
 import {Route} from "react-router-dom";
+import JobAdvertisementForm from "./pages/JobAdvertisementForm";
 
 function App() {
 	 return (
 			 <>
 					<Navi/>
+
+					<PageHeader/>
 					<div className="wrapper">
-						 <Route path='/details'>
+						 <Route exact path='/'>
 								<img
 										alt="..."
 										className="path path3"
-										style={{width: '50rem', left: '-150px' }}
+										style={{width: '75rem', left: '-150px'}}
 										src={require("./assets/img/path5.png").default}
 								/>
-								<PageHeader/>
+								<div className="main">
+									 <div className='section section-typo'>
+											<Container>
+												 <img
+														 alt="..."
+														 className="path path3"
+														 src={require("./assets/img/path2.png").default}
+												 />
+												 <Dashboard/>
+												 <JobAdvertisementForm/>
+											</Container>
+									 </div>
+								</div>
+						 </Route>
+						 <Route path='/details'>
 								<div className="main" style={{marginTop: -1000}}>
 									 <div className='section section-typo'>
 											<Container>
@@ -33,31 +50,23 @@ function App() {
 												 <Dashboard/>
 											</Container>
 									 </div>
-									 <Footer/>
 								</div>
 						 </Route>
-						 <Route exact path='/'>
-								<img
-										alt="..."
-										className="path path3"
-										style={{width: '75rem', left: '-150px'}}
-										src={require("./assets/img/path5.png").default}
-								/>
-								<PageHeader/>
-								<div className="main">
+						 <Route exact path='/addJobAdvert'>
+								<div className="main" style={{marginTop: -900 }}>
 									 <div className='section section-typo'>
 											<Container>
 												 <img
-														 alt="..."
-														 className="path path3"
-														 src={require("./assets/img/path2.png").default}
-												 />
-												 <Dashboard/>
+													alt="..."
+													className="path path2"
+													src={require("./assets/img/path3.png").default}
+											/>
+												 <JobAdvertisementForm/>
 											</Container>
 									 </div>
-									 <Footer/>
 								</div>
 						 </Route>
+						 <Footer/>
 					</div>
 			 </>
 	 );
