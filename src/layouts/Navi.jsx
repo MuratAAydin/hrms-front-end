@@ -12,6 +12,7 @@ import {
 	 Row, UncontrolledDropdown,
 	 UncontrolledTooltip
 } from "reactstrap";
+import {Link} from "react-router-dom";
 
 export default function MenuExampleBasic() {
 	 const [collapseOpen, setCollapseOpen] = React.useState(false);
@@ -52,15 +53,17 @@ export default function MenuExampleBasic() {
 					.scrollIntoView({behavior: "smooth"});
 	 };
 	 return (
-			 <Navbar className={"fixed-top text-white " + color } color-on-scroll="100" expand="lg">
+			 <Navbar className={"fixed-top text-white " + color} color-on-scroll="100" expand="lg">
 					<Container>
 						 <div className="navbar-translate">
-								<NavbarBrand to="/" id="navbar-brand" >
-									 <span className='btn-link btn-danger'>H</span>uman
-									 <span className='btn-link btn-danger'> R</span>esource
-									 <span className='btn-link btn-danger'> M</span>anagement
-									 <span className='btn-link btn-danger'> S</span>ystem
-								</NavbarBrand>
+								<Link to={``}>
+									 <NavbarBrand to="/" id="navbar-brand">
+											<span className='btn-link btn-danger'>H</span>uman
+											<span className='btn-link btn-danger'> R</span>esource
+											<span className='btn-link btn-danger'> M</span>anagement
+											<span className='btn-link btn-danger'> S</span>ystem
+									 </NavbarBrand>
+								</Link>
 								<UncontrolledTooltip placement="bottom" target="navbar-brand">
 									 Designed Creative Tim
 								</UncontrolledTooltip>
@@ -69,13 +72,13 @@ export default function MenuExampleBasic() {
 										className="navbar-toggler navbar-toggler"
 										onClick={toggleCollapse}
 								>
-									 <span className="navbar-toggler-bar bar1" />
-									 <span className="navbar-toggler-bar bar2" />
-									 <span className="navbar-toggler-bar bar3" />
+									 <span className="navbar-toggler-bar bar1"/>
+									 <span className="navbar-toggler-bar bar2"/>
+									 <span className="navbar-toggler-bar bar3"/>
 								</button>
 						 </div>
 						 <Collapse
-								 className={"justify-content-end " + collapseOut }
+								 className={"justify-content-end " + collapseOut}
 								 navbar
 								 isOpen={collapseOpen}
 								 onExiting={onCollapseExiting}
@@ -97,7 +100,7 @@ export default function MenuExampleBasic() {
 														 className="navbar-toggler"
 														 onClick={toggleCollapse}
 												 >
-														<i className="tim-icons icon-simple-remove" />x
+														<i className="tim-icons icon-simple-remove"/>x
 												 </button>
 											</Col>
 									 </Row>
@@ -112,7 +115,7 @@ export default function MenuExampleBasic() {
 													nav
 													onClick={(e) => e.preventDefault()}
 											>
-												 <i className="fa fa-cogs d-lg-none d-xl-none" />
+												 <i className="fa fa-cogs d-lg-none d-xl-none"/>
 												 Language
 											</DropdownToggle>
 											<DropdownMenu className="dropdown-with-icons">
@@ -131,14 +134,14 @@ export default function MenuExampleBasic() {
 													target="_blank"
 													href="#"
 											>
-												 <i className="tim-icons icon-spaceship" /> Sign Up
+												 <i className="tim-icons icon-spaceship"/> Sign Up
 											</Button>
 											<Button
 													className="nav-link d-lg-none d-xl-none pr-3 ml-1"
 													color="default"
 													onClick={scrollToDownload}
 											>
-												 <i className="tim-icons icon-cloud-download-93" /> Sign In
+												 <i className="tim-icons icon-cloud-download-93"/> Sign In
 											</Button>
 									 </NavItem>
 									 <NavItem>
@@ -148,7 +151,7 @@ export default function MenuExampleBasic() {
 													style={{paddingRight: '10px'}}
 													onClick={scrollToDownload}
 											>
-												 <i className="tim-icons icon-cloud-download-93" /> Sign In
+												 <i className="tim-icons icon-cloud-download-93"/> Sign In
 											</Button>
 									 </NavItem>
 								</Nav>

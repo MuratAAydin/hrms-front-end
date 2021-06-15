@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Button, Card, CardBody, CardFooter, Col, ListGroup, ListGroupItem, Row, TabPane} from "reactstrap";
 import JobAdvertService from "../services/jobAdvertService";
-import {Route} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 
 export default function JobAdvertCards() {
 	 const [jobAdverts, setJobAdverts] = useState([]);
@@ -34,9 +34,11 @@ export default function JobAdvertCards() {
 														 </Row>
 													</CardBody>
 													<CardFooter className="text-center">
-														 <Button className="btn-simple" color="success">
-																View
-														 </Button>
+														 <Link to={`/details/jobadverts/${jobAdvert.id}`}>
+																<Button className="btn-simple" color="success">
+																	 View
+																</Button>
+														 </Link>
 													</CardFooter>
 											 </Card>
 										</Col>
@@ -44,9 +46,12 @@ export default function JobAdvertCards() {
 						 </Row>
 						 <Route exact path='/'>
 								<div className='text-center'>
-									 <Button className="btn-round" color="primary" type="button">
-											view all employee
-									 </Button>
+									 <Link to={`/details/jobadverts`}>
+
+											<Button className="btn-round" color="primary" type="button">
+												 view all employee
+											</Button>
+									 </Link>
 								</div>
 						 </Route>
 					</TabPane>

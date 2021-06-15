@@ -14,7 +14,7 @@ function App() {
 			 <>
 					<Navi/>
 					<div className="wrapper">
-						 <Route exact path='/details'>
+						 <Route path='/details'>
 								<img
 										alt="..."
 										className="path path3"

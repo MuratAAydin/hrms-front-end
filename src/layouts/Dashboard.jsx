@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
-
+import JobAdvertCards from "../pages/JobAdvertCards";
+import EmployeeCards from "../pages/EmployeeCards";
 import {
 	 TabContent,
 	 Container,
@@ -13,8 +14,6 @@ import {
 	 NavItem,
 	 NavLink, Input, Navbar, Collapse
 } from "reactstrap";
-import JobAdvertCards from "../pages/JobAdvertCards";
-import EmployeeCards from "../pages/EmployeeCards";
 
 export default function DataListExample() {
 	 const [textTabs, setTextTabs] = React.useState('JobAdverts');
@@ -35,28 +34,28 @@ export default function DataListExample() {
 											<CardHeader>
 												 <Navbar className="navbar-transparent nav-tabs-info" expand="lg">
 														<Nav className="nav-tabs-info" role="tablist" tabs>
-															 <NavItem>
-																	<NavLink
-																			className={classnames({
-																				 active: textTabs === 'JobAdverts',
-																			})}
-																			onClick={(e) => setTextTabs('JobAdverts')}
-																			href="#"
-																	>
-																		 Job Adverts
-																	</NavLink>
-															 </NavItem>
-															 <NavItem>
-																	<NavLink
-																			className={classnames({
-																				 active: textTabs === 'Employee',
-																			})}
-																			onClick={(e) => setTextTabs('Employee')}
-																			href="#"
-																	>
-																		 Employees
-																	</NavLink>
-															 </NavItem>
+																	<NavItem>
+																		 <NavLink
+																				 className={classnames({
+																						active: textTabs === 'JobAdverts',
+																				 })}
+																				 onClick={(e) => setTextTabs('JobAdverts')}
+																				 href="#"
+																		 >
+																				Job Adverts
+																		 </NavLink>
+																	</NavItem>
+																	<NavItem>
+																		 <NavLink
+																				 className={classnames({
+																						active: textTabs === 'Employee',
+																				 })}
+																				 onClick={(e) => setTextTabs('Employee')}
+																				 href="#"
+																		 >
+																				Employees
+																		 </NavLink>
+																	</NavItem>
 														</Nav>
 														<Collapse navbar isOpen={false}>
 															 <div className="ml-auto">
