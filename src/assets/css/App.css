@@ -11652,7 +11652,7 @@ hr {
 
 .form-check .form-check-sign::after {
   font-family: 'nucleo';
-  content: "\ea1b";
+  content: "\2713";
   top: 0px;
   text-align: center;
   font-size: 14px;
