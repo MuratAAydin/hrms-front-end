@@ -176,7 +176,7 @@ export default function JobAdvertisementForm() {
 									<Label check>
 										 <Input type="checkbox"/>
 										 <span className="form-check-sign"/>
-										 Tam zamanlı
+										 Work type
 									</Label>
 							 </FormGroup>
 						</Form>
